@@ -3,10 +3,10 @@
 A module that contains a function to wait for random delays using tasks.
 """
 import asyncio
-from task_wait_random import task_wait_random
+from 3-tasks import task_wait_random
 
 
-async def task_wait_n(n: int, max_delay: int) -> list:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
     Executes task_wait_random n times with the specified max_delay.
     
