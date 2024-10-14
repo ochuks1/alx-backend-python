@@ -11,7 +11,7 @@ from typing import Sequence, Any, Union
 
 def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
     """
-    Returns the first element of a sequence if available, otherwise returns None.
+    Returns the first element of a sequence, otherwise returns None.
 
     Args:
         lst (Sequence[Any]): A sequence of elements.
