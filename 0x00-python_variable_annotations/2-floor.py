@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import math
 """
-Module for converting a float to a string.
+This module contains a function that returns the floor of a float.
 """
 
 
