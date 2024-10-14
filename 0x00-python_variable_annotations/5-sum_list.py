@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
-Module for working with a list of integers and floats.
+Module for working with a list of floats.
 """
 
-from typing import List, Union
+from typing import List
 
-def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
+def sum_list(input_list: List[float]) -> float:
     """
-    Sum a list containing both integers and floats and return the result as a float.
+    Sum a list of floats and return the result.
 
     Args:
-        mxd_lst (List[Union[int, float]]): The list of integers and floats.
+        input_list (List[float]): The list of floats.
 
     Returns:
-        float: The sum of the list as a float.
+        float: The sum of the list of floats.
     """
-    return sum(mxd_lst)
+    return sum(input_list)
 

@@ -1,19 +1,26 @@
 #!/usr/bin/env python3
 """
-Module for working with a list of floats.
+Module for defining variables with proper type annotations.
 """
 
-from typing import List
 
-def sum_list(input_list: List[float]) -> float:
-    """
-    Sum a list of floats and return the result.
+a: int = 1
+"""
+Variable a is an integer with the value 1.
+"""
 
-    Args:
-        input_list (List[float]): The list of floats.
+pi: float = 3.1416
+"""
+Variable pi is a float with the value 3.1416.
+"""
 
-    Returns:
-        float: The sum of the list of floats.
-    """
-    return sum(input_list)
+i_understand_annotations: bool = True
+"""
+Variable i_understand_annotations is a boolean with the value True.
+"""
+
+school: str = "Holberton"
+"""
+Variable school is a string with the value "Holberton".
+"""
 
