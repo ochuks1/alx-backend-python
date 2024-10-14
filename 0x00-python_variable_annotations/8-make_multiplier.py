@@ -1,26 +1,22 @@
 #!/usr/bin/env python3
 """
-Module for getting a value from a dictionary safely.
+Module for returning functions by float.
 """
 
-from typing import Mapping, Any, Union, TypeVar
+from typing import Callable
 
 T = TypeVar('T')
 
-def safely_get_value(dct: Mapping, key: Any, default: Union[T, None] = None) -> Union[Any, T]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
-    Get a value from a dictionary if the key exists, otherwise return the default value.
+    Takes a float as a multiplier and returns a function that multiplies 
+    a float by this multiplier.
 
     Args:
-        dct (Mapping): The dictionary to retrieve the value from.
-        key (Any): The key to search for in the dictionary.
-        default (Union[T, None], optional): The default value to return if the key is not found.
+        multiplier (float): The multiplier.
 
     Returns:
-        Union[Any, T]: The value from the dictionary or the default value.
+        Callable[[float], float]: A function that takes a float and returns 
+        the product of the input and the multiplier.
     """
-    if key in dct:
-        return dct[key]
-    else:
-        return default
-
+    return lambda x: x * multiplier
