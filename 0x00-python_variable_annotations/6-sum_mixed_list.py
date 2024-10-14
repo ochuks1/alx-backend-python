@@ -3,17 +3,16 @@
 Module for getting string representation of a list.
 """
 
-from typing import List
+from typing import List, Union
 
-def to_str_list(input_list: List[int]) -> List[str]:
+def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     """
-    Convert a list of integers into a list of strings.
+    Takes a list of integers and floats and returns the sum as a float.
 
     Args:
-        input_list (List[int]): A list of integers.
+        mxd_lst (List[Union[int, float]]): A list containing integers and floats.
 
     Returns:
-        List[str]: A list of the integers as strings.
+        float: The sum of all numbers in the list as a float.
     """
-    return [str(i) for i in input_list]
-
+    return float(sum(mxd_lst))
