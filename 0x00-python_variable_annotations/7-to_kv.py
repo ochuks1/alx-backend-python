@@ -3,20 +3,19 @@
 Module for getting the first element of a sequence with duck typing.
 """
 
-from typing import Sequence, Any, Union
+from typing import Union, Tuple
 
-def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """
-    Get the first element of a sequence, or return None if the sequence is empty.
+    Takes a string and an int or float, and returns a tuple.
 
     Args:
-        lst (Sequence[Any]): A sequence of elements.
+        k (str): The string.
+        v (Union[int, float]): An integer or a float.
 
     Returns:
-        Union[Any, None]: The first element or None if the sequence is empty.
+        Tuple[str, float]: A tuple where the first element is the string, 
+        and the second element is the square of the int/float as a float.
     """
-    if lst:
-        return lst[0]
-    else:
-        return None
-
+    return (k, float(v ** 2))
