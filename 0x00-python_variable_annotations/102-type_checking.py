@@ -6,17 +6,17 @@ Module for zooming an array with type annotations and mypy checks.
 from typing import Tuple, List
 
 
-def zoom_array(lst: Tuple, factor: int = 2) -> List:
+def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
     """Zooms in on an array by duplicating its elements.
 
     Args:
-        lst (Tuple): The input tuple whose elements are to be duplicated.
+        lst (Tuple[int, ...]): The input tuple whose elements are to be duplicated.
         factor (int): The number of times to duplicate each element.
 
     Returns:
-        List: A list containing the zoomed-in elements.
+        List[int]: A list containing the zoomed-in elements.
     """
-    zoomed_in: List = [
+    zoomed_in: List[int] = [
         item for item in lst
         for i in range(factor)
     ]
