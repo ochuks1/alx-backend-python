@@ -3,28 +3,18 @@
 Module for zooming an array using type annotations and mypy checks.
 """
 
-from typing import Tuple, List
+from typing import Iterable, Sequence, List, Tuple
 
-def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
+
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """
-    Zoom an array by repeating each element by a given factor.
+    Takes an iterable of sequences and returns a list of tuples, where each tuple contains a sequence
+    and its length.
 
     Args:
-        lst (Tuple[int, ...]): The tuple of integers.
-        factor (int, optional): The repetition factor. Defaults to 2.
+        lst (Iterable[Sequence]): An iterable containing sequences.
 
     Returns:
-        List[int]: The zoomed list of integers.
+        List[Tuple[Sequence, int]]: A list of tuples, each containing a sequence and its length.
     """
-    zoomed_in: List[int] = [
-        item for item in lst
-        for _ in range(factor)
-    ]
-    return zoomed_in
-
-array = (12, 72, 91)
-
-zoom_2x = zoom_array(array)
-
-zoom_3x = zoom_array(array, 3)
-
+    return [(i, len(i)) for i in lst]
