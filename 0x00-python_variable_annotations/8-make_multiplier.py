@@ -5,7 +5,6 @@ Module for returning functions by float.
 
 from typing import Callable
 
-T = TypeVar('T')
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
