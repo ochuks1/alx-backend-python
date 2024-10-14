@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
+"""
+This module defines a function safe_first_element.
+
+safe_first_element(lst: Sequence) -> Union[Any, None]:
+    Returns the first element of a sequence or None if the sequence is empty.
+"""
+
 from typing import Sequence, Any, Union
+
 
 def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
     """
@@ -15,4 +23,3 @@ def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
         return lst[0]
     else:
         return None
-
