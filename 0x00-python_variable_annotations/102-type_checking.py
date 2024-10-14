@@ -12,6 +12,7 @@ Returns:
 
 from typing import List, Tuple
 
+
 def zoom_array(lst: Tuple, factor: int = 2) -> List:
     """Returns a list of elements zoomed in by the specified factor."""
     zoomed_in: List = [
