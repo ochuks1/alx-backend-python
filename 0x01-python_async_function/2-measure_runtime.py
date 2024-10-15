@@ -5,8 +5,12 @@ the average execution time for wait_n.
 """
 
 import time
+import importlib.util
 import asyncio
-from concurrent_coroutines import wait_n
+
+spec = importlib.util.spec_from_file_location("wait_n", "./1-concurrent_coroutines.py")
+wait_n = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(wait_n)
 
 
 def measure_time(n: int, max_delay: int) -> float:

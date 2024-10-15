@@ -7,7 +7,11 @@ returns the list of delays in ascending order.
 
 import asyncio
 from typing import List
-from 0_basic_async_syntax import wait_random
+import importlib.util
+
+spec = importlib.util.spec_from_file_location("wait_random", "./0-basic_async_syntax.py")
+wait_random = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(wait_random)
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:

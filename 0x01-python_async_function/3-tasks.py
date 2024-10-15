@@ -5,7 +5,10 @@ returns an asyncio.Task.
 """
 
 import asyncio
-from basic_async_syntax import wait_random
+import importlib.util
+spec = importlib.util.spec_from_file_location("wait_random", "./0-basic_async_syntax.py")
+wait_random = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(wait_random)
 
 
 def task_wait_random(max_delay: int) -> asyncio.Task:

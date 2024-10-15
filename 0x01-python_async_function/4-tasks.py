@@ -6,8 +6,10 @@ in ascending order.
 """
 
 import asyncio
-from typing import List
-from tasks import task_wait_random
+import importlib.util
+spec = importlib.util.spec_from_file_location("task_wait_random", "./3-tasks.py")
+task_wait_random = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(task_wait_random)
 
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
@@ -29,5 +31,4 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
         for j in range(i + 1, len(delays)):
             if delays[i] > delays[j]:
                 delays[i], delays[j] = delays[j], delays[i]
-    
     return delays
