@@ -4,7 +4,7 @@ A module that contains a function to create an asyncio Task
 from wait_random.
 """
 import asyncio
-from wait_random import wait_random  # Ensure the correct path is used
+from 0_basic_async_syntax import wait_random
 
 
 def task_wait_random(max_delay: int) -> asyncio.Task:
