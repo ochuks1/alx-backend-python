@@ -6,7 +6,7 @@ the average execution time for wait_n.
 
 import time
 import asyncio
-from 1_concurrent_coroutines import wait_n
+from 1-concurrent_coroutines import wait_n
 
 
 def measure_time(n: int, max_delay: int) -> float:
