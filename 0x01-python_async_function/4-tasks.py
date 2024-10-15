@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-This module defines a function task_wait_n that spawns
-task_wait_random n times and returns the list of delays
-in ascending order.
+Function to create multiple asyncio tasks for wait_random.
 """
 
+from typing import List
 import asyncio
 import importlib.util
+
 spec = importlib.util.spec_from_file_location("task_wait_random", "./3-tasks.py")
 task_wait_random = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(task_wait_random)
@@ -14,21 +14,15 @@ spec.loader.exec_module(task_wait_random)
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
-    Spawns task_wait_random n times with max_delay and returns
-    a list of all delays in ascending order.
+    Executes task_wait_random n times and returns a list of delays.
 
     Args:
-        n (int): Number of times to spawn task_wait_random.
-        max_delay (int): Maximum delay for task_wait_random.
-    
-    Returns:
-        List[float]: List of delays sorted in ascending order.
-    """
-    tasks = [task_wait_random(max_delay) for _ in range(n)]
-    delays = await asyncio.gather(*tasks)
+        n (int): Number of times to call task_wait_random.
+        max_delay (int): Maximum delay for wait_random.
 
-    for i in range(len(delays)):
-        for j in range(i + 1, len(delays)):
-            if delays[i] > delays[j]:
-                delays[i], delays[j] = delays[j], delays[i]
-    return delays
+    Returns:
+        List[float]: List of delays in ascending order.
+    """
+    tasks = [task_wait_random.task_wait_random(max_delay) for _ in range(n)]
+    delays = await asyncio.gather(*tasks)
+    return sorted(delays)
